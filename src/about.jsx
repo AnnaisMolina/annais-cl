@@ -62,31 +62,31 @@ function About({ goto }) {
           <h2 className="about-h2">Línea de tiempo</h2>
           <ol className="timeline">
             <li>
-              <span className="tl-year mono">2026-2 →</span>
+              <span className="tl-year mono">2026</span>
               <div>
-                <strong>Annais.cl</strong>
-                <p>Lanzamiento del sitio personal. Notas, recursos y, pronto, asesorías.</p>
+                <strong>Annaismolina.cl</strong>
+                <p>Lanzamiento del sitio personal para que sepas mas de mi. Mi blog, recursos y aprendizaje.</p>
               </div>
             </li>
             <li>
               <span className="tl-year mono">2026</span>
               <div>
                 <strong>CATA · Radiowood</strong>
-                <p>Data Scientist — Aplicación de modelos de Deep Learning aplicado a la industria de la madera.</p>
+                <p>Data Scientist en un proyecto de transferencia tecnológica.</p>
               </div>
             </li>
             <li>
-              <span className="tl-year mono">2025-2</span>
+              <span className="tl-year mono">2025</span>
               <div>
                 <strong>Entel</strong>
                 <p>Analista de datos - Aplicación de modelos y métricas para entender comportamientos de usuarios.</p>
               </div>
             </li>
               <li>
-              <span className="tl-year mono">—</span>
+              <span className="tl-year mono">2025</span>
               <div>
-                <strong>Astronomía</strong>
-                <p>Formación universitaria. Series temporales, fotometría, demasiado café.</p>
+                <strong>Astronomía y ciencia de datos</strong>
+                <p>Finalización de mi carrera: Tesis de astroinformática.</p>
               </div>
             </li>
           </ol>
