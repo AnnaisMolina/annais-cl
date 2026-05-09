@@ -36,9 +36,10 @@ function HeroEyebrow() {
 function HeroLede() {
   return (
     <p className="lede">
-      Astrónoma y científica de datos. Escribo notas para gente curiosa,
-      armo recursos para quienes están entrando a este oficio, y a veces
-      cuento qué se ve cuando uno apunta un radiotelescopio al cielo.
+      Astrónoma y científica de datos. Escribo notas para gente curiosa y
+      armo recursos para quienes están entrando al mundo de los datos. 
+      El lugar perfecto para aprender algo nuevo cada vez que me cruzo con un paper interesante, 
+      una técnica nueva, o una historia de la IA mal contada.
     </p>
   );
 }
@@ -77,9 +78,7 @@ function HeroSplit({ t, goto }) {
       <div className="hero-photo-wrap">
         <figure className="hero-photo">
           <img src="assets/annais.jpg" alt="Retrato de Annais Molina al aire libre" />
-          <figcaption className="mono">
-            <span>Fig. 01 ·</span> Parque Lota, vere&shy;ano 2025.
-          </figcaption>
+
         </figure>
         <div className="photo-tag mono">@astroannais</div>
       </div>
