@@ -136,7 +136,7 @@ function Nav({ section, goto }) {
     <nav className="nav">
       <button className="nav-brand" onClick={() => goto('home')}>
         <span className="dot" />
-        Annais <em>Molina</em>
+        <em>Astroannais</em>
         <small>annaismolina.cl</small>
       </button>
       <ul className="nav-links">
