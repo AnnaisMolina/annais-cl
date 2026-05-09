@@ -30,17 +30,17 @@ function About({ goto }) {
 
         <div className="about-prose">
           <p className="lead-drop">
-            <span className="dropcap">S</span>oy astrónoma de formación y analista y científica
+            <span className="dropcap">S</span>oy astrónoma de formación, analista y científica
             de datos en la práctica. Mi trabajo se mueve entre dos mundos que,
             visto de cerca, son el mismo: trabajar con datos para entender el mundo (y cosmos) que nos rodea.
           </p>
           <p>
-            Durante el día trabajo como analista de datos en <strong>Entel</strong>,
+            Durante el día trabajo como analista de datos en Entel,
             una empresa de telecomunicaciones en Chile, donde aplico modelos,
             métricas y mucho SQL para entender comportamientos de millones de
             personas. Por las tardes (y algunas noches) hago investigación en el
-            <strong> Centro de Astrofísica y Tecnologías Afines (CATA)</strong>,
-            en un proyecto de transfeerencia técnológica llamado <em>Radiowood</em>.
+            Centro de Astrofísica y Tecnologías Afines (CATA),
+            en un proyecto de transferencia tecnológica llamado Radiowood.
           </p>
           <p>
             Este sitio es un laboratorio personal en donde te contaré mi experiencia y aprendizajes.
@@ -51,7 +51,7 @@ function About({ goto }) {
             mundo.
           </p>
           <p>
-            Pronto voy a abrir un espacio para <strong>asesorías 1:1</strong>:
+            Pronto voy a abrir un espacio para asesorías 1:1:
             transición de carrera, revisión de CV, armado de portafolio, y
             preparación para procesos técnicos. Si te interesa, suscríbete al
             boletín y te aviso primero.
