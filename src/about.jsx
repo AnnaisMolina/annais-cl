@@ -7,7 +7,7 @@ function About({ goto }) {
         <p className="block-eyebrow mono">Sobre mí</p>
         <h1 className="about-title">
           Hago ciencia con datos.<br/>
-        De la <em>academia</em>, a la <em>industria</em>.
+        <span style={{whiteSpace: 'nowrap'}}>De la <em>academia</em>, a la <em>industria</em>.</span>
         </h1>
       </header>
 
