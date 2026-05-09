@@ -169,7 +169,7 @@ function Footer({ goto }) {
         <a onClick={() => goto('about')}>Sobre mí</a>
         <a onClick={() => goto('notes')}>Notas</a>
         <a onClick={() => goto('resources')}>Recursos</a>
-        <a href="mailto:hola@annaismolina.cl">Email</a>
+        <a href="mailto:astroannais@gmail.com">Email</a>
         <a href="https://instagram.com/astroannais" target="_blank" rel="noreferrer">Instagram</a>
         <a href="https://www.linkedin.com/in/annaismolinab/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>

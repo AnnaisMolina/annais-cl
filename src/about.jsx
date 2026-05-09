@@ -97,7 +97,7 @@ function About({ goto }) {
           <ul className="contact">
             <li><span className="mono lbl">Instagram</span><a href="https://instagram.com/astroannais" target="_blank" rel="noreferrer">@astroannais ↗</a></li>
             <li><span className="mono lbl">LinkedIn</span><a href="https://www.linkedin.com/in/annaismolinab/" target="_blank" rel="noreferrer">in/annaismolinab ↗</a></li>
-            <li><span className="mono lbl">Email</span><a href="mailto:hola@annaismolina.cl">hola@annaismolina.cl ↗</a></li>
+            <li><span className="mono lbl">Email</span><a href="mailto:astroannais@gmail.com">astroannais@gmail.com ↗</a></li>
           </ul>
         </div>
       </section>
