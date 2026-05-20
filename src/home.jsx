@@ -6,14 +6,14 @@ const { useEffect, useState } = React;
 
 // Componente raíz de la página de inicio.
 // Recibe las notas y recursos desde data.jsx y los pasa a cada sección.
-function Home({ t, goto, NOTES, RESOURCES }) {
+function Home({ t, goto, NOTES, RESOURCES, openNote }) {
   const recentNotes = NOTES.slice(0, 3);       // solo las 3 notas más recientes
   const featuredResources = RESOURCES.slice(0, 4); // solo los 4 primeros recursos
 
   return (
     <main className="home" data-screen-label="01 Home">
       <Hero t={t} goto={goto} />
-      <RecentNotes notes={recentNotes} goto={goto} />
+      <RecentNotes notes={recentNotes} goto={goto} openNote={openNote} />
       <FeaturedResources items={featuredResources} goto={goto} />
       <Newsletter />
     </main>
@@ -182,8 +182,9 @@ function HeroOverlap({ t, goto }) {
 /* ─────────────────────────────────── NOTAS RECIENTES ──────────
    Muestra las 3 notas más recientes de data.jsx en una lista vertical.
    Cada ítem tiene: número, tipo, etiqueta, tiempo de lectura, título y fecha.
+   Al clickear un ítem, se abre la página de detalle de esa nota.
 ──────────────────────────────────────────────────────────────── */
-function RecentNotes({ notes, goto }) {
+function RecentNotes({ notes, goto, openNote }) {
   return (
     <section className="block recent-notes">
       <header className="block-head">
@@ -198,7 +199,11 @@ function RecentNotes({ notes, goto }) {
       {/* .map() recorre el array de notas y genera un <li> por cada una */}
       <ol className="note-strip">
         {notes.map((n, i) => (
-          <li key={n.id} className="note-strip-item">
+          <li
+            key={n.id}
+            className="note-strip-item"
+            onClick={() => openNote && openNote(n.id)}
+          >
             <span className="note-num mono">{String(i + 1).padStart(2, '0')}</span>
             <div className="note-strip-body">
               <div className="note-strip-meta mono">

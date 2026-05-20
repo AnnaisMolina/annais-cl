@@ -256,6 +256,7 @@ function SitePanel({ t, setTweak }) {
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [section, setSection] = useStateApp('home');
+  const [activeNoteId, setActiveNoteId] = useStateApp(null);
 
   const tokens = useMemoApp(() => buildTokens(t), [t]);
 
@@ -270,19 +271,34 @@ function App() {
 
   const goto = (s) => {
     setSection(s);
+    setActiveNoteId(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const openNote = (noteId) => {
+    setActiveNoteId(noteId);
+    setSection('note');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   let content;
-  if (section === 'about') content = <About goto={goto} />;
-  else if (section === 'notes') content = <Notes NOTES={NOTES} TAGS={TAGS} />;
+  if (section === 'note' && activeNoteId) {
+    const note = NOTES.find(n => n.id === activeNoteId);
+    if (note) {
+      content = <NoteDetail note={note} NOTES={NOTES} goto={goto} openNote={openNote} />;
+    } else {
+      content = <Notes NOTES={NOTES} TAGS={TAGS} openNote={openNote} />;
+    }
+  }
+  else if (section === 'about') content = <About goto={goto} />;
+  else if (section === 'notes') content = <Notes NOTES={NOTES} TAGS={TAGS} openNote={openNote} />;
   else if (section === 'resources') content = <Resources RESOURCES={RESOURCES} />;
-  else content = <Home t={t} goto={goto} NOTES={NOTES} RESOURCES={RESOURCES} />;
+  else content = <Home t={t} goto={goto} NOTES={NOTES} RESOURCES={RESOURCES} openNote={openNote} />;
 
   return (
     <div className="site">
-      <Nav section={section} goto={goto} />
-      <div key={section} className="page-enter">
+      <Nav section={section === 'note' ? 'notes' : section} goto={goto} />
+      <div key={section + (activeNoteId || '')} className="page-enter">
         {content}
       </div>
       <Footer goto={goto} />

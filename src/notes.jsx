@@ -2,7 +2,7 @@
 
 const { useState: useStateNotes, useMemo: useMemoNotes } = React;
 
-function Notes({ NOTES, TAGS }) {
+function Notes({ NOTES, TAGS, openNote }) {
   const [active, setActive] = useStateNotes('Todos');
   const [view, setView] = useStateNotes('list'); // 'list' | 'index'
 
@@ -58,7 +58,7 @@ function Notes({ NOTES, TAGS }) {
       {view === 'list' ? (
         <ol className="notes-list">
           {filtered.map((n, i) => (
-            <li key={n.id} className="notes-list-item">
+            <li key={n.id} className="notes-list-item" onClick={() => openNote && openNote(n.id)}>
               <div className="nl-rail mono">
                 <span className="nl-num">{String(i + 1).padStart(2, '0')}</span>
                 <span className="nl-kind">{n.kind}</span>
@@ -74,7 +74,11 @@ function Notes({ NOTES, TAGS }) {
                   <span className="nl-tag">#{n.tag}</span>
                 </div>
               </div>
-              <button className="nl-read mono" aria-label={`Leer ${n.title}`}>
+              <button
+                className="nl-read mono"
+                aria-label={`Leer ${n.title}`}
+                onClick={(e) => { e.stopPropagation(); openNote && openNote(n.id); }}
+              >
                 Leer <span className="arrow">→</span>
               </button>
             </li>
@@ -94,7 +98,7 @@ function Notes({ NOTES, TAGS }) {
           </thead>
           <tbody>
             {filtered.map((n, i) => (
-              <tr key={n.id}>
+              <tr key={n.id} onClick={() => openNote && openNote(n.id)}>
                 <td className="muted">{String(i + 1).padStart(3, '0')}</td>
                 <td className="ni-title">{n.title}</td>
                 <td>{n.kind}</td>
